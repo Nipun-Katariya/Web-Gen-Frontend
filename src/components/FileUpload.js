@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 
 var local_url = "http://localhost:8000"
-var vercel_url = ""
+var vercel_url = "https://web-gen-frontend-nipun-katariyas-projects.vercel.app/"
 
 const FileUpload = () => {
   const [file, setFile] = useState(null);
@@ -20,7 +20,7 @@ const FileUpload = () => {
     formData.append("file", file);
 
     try {
-      const response = await axios.post(`${local_url}/upload-flask-app/`, formData, {
+      const response = await axios.post(`${vercel_url}/upload-flask-app/`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -35,7 +35,7 @@ const FileUpload = () => {
   // Handle deleting files
   const handleDeleteFiles = async () => {
     try {
-      const response = await axios.delete(`${local_url}/delete-files/`);
+      const response = await axios.delete(`${vercel_url}/delete-files/`);
       setMessage(response.data.message);
     } catch (error) {
       console.error("Error deleting files:", error);
