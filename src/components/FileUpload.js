@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 
 var local_url = "http://localhost:8000"
-var vercel_url = "https://web-gen-backend-nipun-katariyas-projects.vercel.app"
+var vercel_url = "https://web-gen-backend.vercel.app"
 
 const FileUpload = () => {
   const [file, setFile] = useState(null);
